@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Hi!</title></head>
+  <body>
+    <h1>Hi there! My name is Jessica</h1>
+    <p>I'm from Wisconsin and love hiking and coding. This is my first time playing the Electron (and with node!).</p>
+    Loading...
+  </body>
+
+  <script type="text/javascript">
+    window.$ = window.jQuery = require('jquery');
+    var mainAddr = 'http://localhost:5000';
+    $.ajax({
+        type: 'HEAD',
+        url: mainAddr,
+        success: function() {
+            //alert('good');
+            location.replace(mainAddr);
+        },
+        error: function() {
+            alert('some errors happen...');
+            // page does not exist
+        }
+    });
+  </script>
+</html>
